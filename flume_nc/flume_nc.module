@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file flume_nc.module
+ * Send events to Flume via Telnet.
+ */
+
+ /**
+  * Send events to Flume via Telnet.
+  *
+  * @param string $data
+  *  A string of data. New line will be appended.
+  */
+function flume_nc($data) {
+  require_once __DIR__ .'/vendor/autoload.php';
+
+  try {
+    $client = new Bestnetwork\Telnet\TelnetClient(
+      variable_get('flume_nc_host', 'localhost'),
+      variable_get('flume_nc_port', 3000),
+      variable_get('flume_nc_timeout', 2),
+      "\n" // Prompt.
+    );
+
+    $response = $client->execute($data."\n");
+    $client->disconnect();
+
+    return $response;
+  }
+  catch (Bestnetwork\Telnet\TelnetException $e) {
+    // For now, just log it and let things continue.
+    // In the future, we'll add fail-over services.
+    watchdog_exception('flume_nc', $e);
+  }
+}

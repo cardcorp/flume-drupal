@@ -1,0 +1,86 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "184c425267b1e16972a428e8e4bd2ce9",
+    "packages": [
+        {
+            "name": "bestnetwork/telnet",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bestnetwork/Telnet.git",
+                "reference": "704264078364bb49894dd51f427ca869a75c63fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bestnetwork/Telnet/zipball/704264078364bb49894dd51f427ca869a75c63fb",
+                "reference": "704264078364bb49894dd51f427ca869a75c63fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Bestnetwork\\Telnet\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dalibor Andzakovic",
+                    "email": "dali@swerve.co.nz"
+                },
+                {
+                    "name": "Matthias Blaser",
+                    "email": "mb@adfinis.ch"
+                },
+                {
+                    "name": "Christian Hammers",
+                    "email": "chammers@netcologne.de"
+                },
+                {
+                    "name": "Marc Ennaji"
+                },
+                {
+                    "name": "Bestnetwork",
+                    "email": "reparto.sviluppo@bestnetwork.it"
+                }
+            ],
+            "description": "Telnet client in php",
+            "keywords": [
+                "client",
+                "telnet"
+            ],
+            "time": "2014-02-18 23:37:05"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "bestnetwork/telnet": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

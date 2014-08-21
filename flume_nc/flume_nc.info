@@ -1,0 +1,4 @@
+name = Flume Netcat
+description = Send events to Flume via Telnet
+package = Logging
+core = 7.x
