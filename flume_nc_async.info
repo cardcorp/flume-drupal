@@ -1,4 +1,4 @@
-name = Flume Netcat
-description = Send events to Flume via Telnet
+name = Flume Netcat Async
+description = Blindly Send events to Flume via Telnet without waiting for confirmation.
 package = Logging
 core = 7.x
