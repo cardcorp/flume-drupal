@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Send events to Flume via Telnet.
+ */
+
+/**
+ * Send events to Flume via Telnet.
+ *
+ * @param string $data
+ *   A string of data. New line will be appended.
+ *
+ * @return string
+ *   The response.
+ *
+ * @throws Bestnetwork\Telnet\TelnetException
+ * @throws Exception
+ */
+function flume_nc($data) {
+  require_once __DIR__ . '/vendor/autoload.php';
+
+  try {
+    $client = new Cardcom\Telnet\AsyncTelnetClient(
+      variable_get('flume_nc_host', 'localhost'),
+      variable_get('flume_nc_port', 3000),
+      variable_get('flume_nc_timeout', 2),
+      "\n"
+    );
+
+    $response = $client->execute($data . "\n");
+    $client->disconnect();
+
+    return $response;
+  }
+  catch (Exception $e) {
+    // Log the problem so people know to investigate.
+    watchdog_exception('flume_nc', $e);
+    // Also throw it so calling code can be smart.
+    throw $e;
+  }
+}
